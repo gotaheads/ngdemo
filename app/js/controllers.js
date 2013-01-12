@@ -3,10 +3,11 @@
 /* Controllers */
 
 
-function MyCtrl1($scope) {
+function MyCtrl1($scope, bdetect) {
 }
 
-MyCtrl1.$inject = ['$scope'];
+MyCtrl1.$inject = ['$scope', 'bdetect'];
+
 
 function TemplateCtrl($scope) {
 
