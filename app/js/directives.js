@@ -15,3 +15,5 @@ myModule.directive('useDirective', ['simpleService', function(simpleService) {
       elm.text(simpleService());
     };
   }])
+
+//accounting

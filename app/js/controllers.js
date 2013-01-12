@@ -21,6 +21,7 @@ function TemplateCtrl($scope) {
 
 TemplateCtrl.$inject = ['$scope'];
 
+//CurCtrl
 
 function MyCtrl2() {
 }

@@ -5,10 +5,10 @@
 
 // Demonstrate how to register services
 // In this case it is a simple value service.
-var myModule = angular.module('myApp.services', []).
+var myAppService = angular.module('myApp.services', []).
   value('version', '0.1');
 
-myModule.factory('simpleService', function() {
+myAppService.factory('simpleService', function() {
   var shinyNewServiceInstance = function() {
   	return 'i am simpleService'
   };
@@ -16,7 +16,7 @@ myModule.factory('simpleService', function() {
   return shinyNewServiceInstance;
 });
 
-myModule.factory('bdetect', function() {
+myAppService.factory('bdetect', function() {
   return BrowserDetect;
 });
 

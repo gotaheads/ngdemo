@@ -6,6 +6,8 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: MyCtrl1});
     $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: MyCtrl2});
+    $routeProvider.when('/view3', {templateUrl: 'partials/partial3.html', controller: MyCtrl2});
+    $routeProvider.when('/currency', {templateUrl: 'partials/currency.html', controller: MyCtrl2});
     $routeProvider.otherwise({redirectTo: '/view1'});
   }]);
 
@@ -13,6 +15,8 @@ myApp.run(['$rootScope',function($rootScope) {
 
   $rootScope.browser = BrowserDetect.browser
   $rootScope.browserVersion = BrowserDetect.version
+  //$rootScope.accounting = accounting
+
   //this will be available to all scope variables
 //  $scope.includeLibraries = true;
 
