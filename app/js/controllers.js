@@ -21,8 +21,17 @@ function TemplateCtrl($scope) {
 
 TemplateCtrl.$inject = ['$scope'];
 
-//CurCtrl
+
+function ValCtrl($scope) {
+	
+	$scope.submit = function() {
+
+	}
+}
+ValCtrl.$inject = ['$scope'];
 
 function MyCtrl2() {
 }
 MyCtrl2.$inject = [];
+
+ValCtrl

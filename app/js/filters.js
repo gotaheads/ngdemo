@@ -14,3 +14,10 @@ myAppFilter.filter('money', function() {
     return accounting.formatMoney(data)
   };
 });
+
+myAppFilter.filter('money', function() {
+  return function(data) {
+    return accounting.formatNumber(data);
+  };
+});
+
