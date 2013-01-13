@@ -110,6 +110,7 @@ function UploadCtrl($scope) {
 	
 }
 
+
 UploadCtrl.$inject = ['$scope'];
 
 
@@ -141,3 +142,45 @@ function NgAPICtrl($scope) {
  }
 }
 NgAPICtrl.$inject = ['$scope'];
+
+
+
+function EditJobCtrl($scope, $http, $routeParams) {
+    $scope.title = 'Edit job';
+    $scope.jobId = $routeParams.jobId;
+    console.log("EditJobCtrl " + $scope.jobId);
+    
+    $http.get('/restlet/jobs/' + $scope.jobId).success(function(job) {
+        $scope.job = job;
+    });    
+
+    $scope.save = function() {
+        $http.put('/restlet/jobs/-1', $scope.job)
+        .success(function(data, status) {
+            console.log('job saved d:' + data + ' s:' + status);
+            $scope.status = status;
+            $scope.data = data;
+            $scope.result = data; // Show result from server in our <pre></pre> element
+        })
+        .error(function(data, status) {
+            $scope.data = data || "Request failed";
+            $scope.status = status;        
+        });
+    };    
+}
+
+EditJobCtrl.$inject = ['$scope','$http', '$routeParams'];
+
+
+function ViewContractCtrl($scope, $http, $routeParams) {
+    $scope.title = 'Edit job';
+    $scope.jobId = $routeParams.jobId;
+    console.log("ViewContractCtrl " + $scope.jobId);
+    
+    $http.get('/restlet/jobs/' + $scope.jobId).success(function(job) {
+        $scope.job = job;
+    });    
+
+}
+
+ViewContractCtrl.$inject = ['$scope','$http', '$routeParams'];

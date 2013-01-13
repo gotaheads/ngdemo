@@ -14,6 +14,9 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
     $routeProvider.when('/upload', {templateUrl: 'partials/upload.html', controller: UploadCtrl});
     $routeProvider.when('/bootstrap', {templateUrl: 'partials/bootstrap.html', controller: BootstrapCtrl});
     $routeProvider.when('/ngapi', {templateUrl: 'partials/ngapi.html', controller: NgAPICtrl});
+
+    $routeProvider.when('/edit-job/:jobId', {templateUrl: 'partials/edit-job.html', controller: EditJobCtrl});
+    
     $routeProvider.otherwise({redirectTo: '/view1'});
   }]);
 
