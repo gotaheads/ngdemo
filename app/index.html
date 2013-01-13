@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>My AngularJS App</title>
   <link rel="stylesheet" href="css/app.css"/>
-
+  <link href="lib/file-uploader/client/fineuploader.css" rel="stylesheet">
   <!--[if lte IE 8]>
       <script>
         document.createElement('ng-include');
@@ -31,13 +31,32 @@
   <a ng-href="#/currency">currency</a>
   <a ng-href="#/validate">validate</a>
   <a ng-href="#/rest">rest</a>
+  <a ng-href="#/nginit">nginit</a>
+  <a ng-href="#/upload">upload</a>
+  
+
+
+<script src="lib/file-uploader/client/js/header.js"></script>
+<script src="lib/file-uploader/client/js/util.js"></script>
+<script src="lib/file-uploader/client/js/button.js"></script>
+<script src="lib/file-uploader/client/js/handler.base.js"></script>
+<script src="lib/file-uploader/client/js/handler.form.js"></script>
+<script src="lib/file-uploader/client/js/handler.xhr.js"></script>
+<script src="lib/file-uploader/client/js/uploader.basic.js"></script>
+<script src="lib/file-uploader/client/js/dnd.js"></script>
+<script src="lib/file-uploader/client/js/uploader.js"></script>
+
+
+
+  <script src="lib/accounting.js"></script>
+
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
   -->
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular/angular-resource.js"></script>
   
-  <script src="lib/accounting.js"></script>
+
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>

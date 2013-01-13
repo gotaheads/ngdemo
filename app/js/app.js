@@ -9,8 +9,9 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
     $routeProvider.when('/view3', {templateUrl: 'partials/partial3.html', controller: MyCtrl2});
     $routeProvider.when('/currency', {templateUrl: 'partials/currency.html', controller: MyCtrl2});
     $routeProvider.when('/validate', {templateUrl: 'partials/validate.html', controller: ValCtrl});
-
     $routeProvider.when('/rest', {templateUrl: 'partials/rest.html', controller: RestCtrl});
+    $routeProvider.when('/nginit', {templateUrl: 'partials/nginit.html', controller: MyCtrl2});
+    $routeProvider.when('/upload', {templateUrl: 'partials/upload.html', controller: UploadCtrl});
     $routeProvider.otherwise({redirectTo: '/view1'});
   }]);
 

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fine Uploader Demo</title>
+    <link href="lib/file-uploader/client/fineuploader.css" rel="stylesheet">
+    <style>
+      /* Fine Uploader
+      -------------------------------------------------- */
+      .qq-upload-list {
+        text-align: left;
+      }
+ 
+      /* For the bootstrapped demos */
+      li.alert-success {
+        background-color: #DFF0D8;
+      }
+ 
+      li.alert-error {
+        background-color: #F2DEDE;
+      }
+ 
+      .alert-error .qq-upload-failed-text {
+        display: inline;
+      }
+    </style>  </head>
+  <body>
+
+  <div id="fine-uploader"></div>
+
+  <script src="lib/file-uploader/client/js/header.js"></script>
+  <script src="lib/file-uploader/client/js/util.js"></script>
+  <script src="lib/file-uploader/client/js/button.js"></script>
+  <script src="lib/file-uploader/client/js/handler.base.js"></script>
+  <script src="lib/file-uploader/client/js/handler.form.js"></script>
+  <script src="lib/file-uploader/client/js/handler.xhr.js"></script>
+  <script src="lib/file-uploader/client/js/uploader.basic.js"></script>
+  <script src="lib/file-uploader/client/js/dnd.js"></script>
+  <script src="lib/file-uploader/client/js/uploader.js"></script>
+
+ 
+    <script>
+      function createUploader() {
+        var fileCount = 0;
+        var fileLimit = 1;
+
+        var uploader = new qq.FineUploader({
+          // Pass the HTML element here
+          element: document.getElementById('fine-uploader'),
+          multiple: false,
+          validation: {
+              allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
+              sizeLimit: 51200000 //51200 // 50 kB = 50 * 1024 bytes
+          },         
+          request: {
+            endpoint: 'server/handleUploads'
+          },
+          callbacks: {
+            onSubmit: function(id, fileName) {
+
+//              fileCount ++;
+//              if(fileCount > fileLimit) {
+//                $('#filelimit-fine-uploader .qq-upload-button').hide();
+//                $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
+//                return false;
+//              }
+
+            },
+            onCancel: function(id, fileName) {
+//              fileCount --;
+//              if(fileCount <= fileLimit) {
+//                $('#filelimit-fine-uploader .qq-upload-button').show();
+//              }
+            },
+            onComplete: function(id, fileName, responseJSON) {
+
+              //if (responseJSON.success) {
+              //    $('#filelimit-fine-uploader .qq-upload-button').hide();
+              //    $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
+              //  }
+              //}
+            }
+          },
+              });
+      }
+    
+      //window.onload = createUploader;
+    </script>
+    
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-resource.js"></script>
+    
+
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/directives.js"></script>
+
+  </body>
+</html>

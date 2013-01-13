@@ -1,65 +1,43 @@
-'use strict';
-
-/* Controllers */
-
-
-function MyCtrl1($scope, bdetect) {
-}
-
-MyCtrl1.$inject = ['$scope', 'bdetect'];
-
-
-function TemplateCtrl($scope) {
-
-  $scope.templates =
-    [ { name: 'partial1.html', url: 'partials/partial1.html'},
-      { name: 'partial2.html', url: 'partials/partial2.html'},
-      { name: 'partial3.html', url: 'partials/partial3.html'}];
-
-  $scope.template = $scope.templates[0];	
-}
-
-TemplateCtrl.$inject = ['$scope'];
-
-
-function ValCtrl($scope) {
-	
-	$scope.master= {};
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fine Uploader Demo</title>
+    <link href="client/fineuploader.css" rel="stylesheet">
+    <style>
+      /* Fine Uploader
+      -------------------------------------------------- */
+      .qq-upload-list {
+        text-align: left;
+      }
  
-	  $scope.update = function(user) {
-	    $scope.master= angular.copy(user);
-	  };
+      /* For the bootstrapped demos */
+      li.alert-success {
+        background-color: #DFF0D8;
+      }
  
-	  $scope.reset = function() {
-	    $scope.user = angular.copy($scope.master);
-	  };
+      li.alert-error {
+        background-color: #F2DEDE;
+      }
  
-  $scope.reset();
-}
+      .alert-error .qq-upload-failed-text {
+        display: inline;
+      }
+    </style>  </head>
+  <body>
+    <div id="fine-uploader"></div>
 
-ValCtrl.$inject = ['$scope'];
-
-function RestCtrl($scope, Phone, myFoo) {
-	console.log('query start')
-	$scope.phones = Phone.query();
-	console.log('query finished')
-
-	$scope.get = function() {
-		console.log('myFoo start')
-		myFoo.get()
-		console.log('myFoo finished')
-		
-	}
-
-}
-
-RestCtrl.$inject = ['$scope', 'Phone','myFoo'];
-
-
-function UploadCtrl($scope) {
-	
-	$scope.master= {};
-
+    <script src="client/js/header.js"></script>
+    <script src="client/js/util.js"></script>
+    <script src="client/js/button.js"></script>
+    <script src="client/js/handler.base.js"></script>
+    <script src="client/js/handler.form.js"></script>
+    <script src="client/js/handler.xhr.js"></script>
+    <script src="client/js/uploader.basic.js"></script>
+    <script src="client/js/dnd.js"></script>
+    <script src="client/js/uploader.js"></script>
+ 
+    <script>
       function createUploader() {
         var fileCount = 0;
         var fileLimit = 1;
@@ -104,15 +82,7 @@ function UploadCtrl($scope) {
               });
       }
     
-      new createUploader();
-	
-}
-
-UploadCtrl.$inject = ['$scope'];
-
-
-function MyCtrl2() {
-}
-MyCtrl2.$inject = [];
-
-ValCtrl
+      window.onload = createUploader;
+    </script>
+  </body>
+</html>
