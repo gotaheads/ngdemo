@@ -117,4 +117,27 @@ function MyCtrl2() {
 }
 MyCtrl2.$inject = [];
 
-ValCtrl
+
+function BlankCtrl() {
+	$scope.pageMessage = 'Welcome!!!???'
+}
+BlankCtrl.$inject = [];
+
+
+function BootstrapCtrl($scope) {
+ $scope.color = 'blue'
+
+}
+BootstrapCtrl.$inject = ['$scope'];
+
+
+
+function NgAPICtrl($scope) {
+ $scope.color = 'blue'
+
+ $scope.hitEnter =  function() {
+ 	console.log('hit enter on div')
+
+ }
+}
+NgAPICtrl.$inject = ['$scope'];

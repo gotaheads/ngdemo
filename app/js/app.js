@@ -12,6 +12,8 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
     $routeProvider.when('/rest', {templateUrl: 'partials/rest.html', controller: RestCtrl});
     $routeProvider.when('/nginit', {templateUrl: 'partials/nginit.html', controller: MyCtrl2});
     $routeProvider.when('/upload', {templateUrl: 'partials/upload.html', controller: UploadCtrl});
+    $routeProvider.when('/bootstrap', {templateUrl: 'partials/bootstrap.html', controller: BootstrapCtrl});
+    $routeProvider.when('/ngapi', {templateUrl: 'partials/ngapi.html', controller: NgAPICtrl});
     $routeProvider.otherwise({redirectTo: '/view1'});
   }]);
 
@@ -20,6 +22,8 @@ myApp.run(['$rootScope',function($rootScope) {
   $rootScope.browser = BrowserDetect.browser
   $rootScope.browserVersion = BrowserDetect.version
   $rootScope.browserOS = BrowserDetect.OS
+
+  $rootScope.pageMessage = 'Welcome!'
 
   //$rootScope.accounting = accounting
 
