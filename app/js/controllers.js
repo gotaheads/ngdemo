@@ -55,56 +55,58 @@ function RestCtrl($scope, Phone, myFoo) {
 
 RestCtrl.$inject = ['$scope', 'Phone','myFoo'];
 
-
+//https://github.com/valums/file-uploader#summary
+//test with ie
+//http://code.google.com/p/ie7-js/
 function UploadCtrl($scope) {
 	
 	$scope.master= {};
 
-      function createUploader() {
-        var fileCount = 0;
-        var fileLimit = 1;
+	function createUploader() {
+		var fileCount = 0;
+		var fileLimit = 1;
 
-        var uploader = new qq.FineUploader({
-          // Pass the HTML element here
-          element: document.getElementById('fine-uploader'),
-          multiple: false,
-          validation: {
-              allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-              sizeLimit: 51200000 //51200 // 50 kB = 50 * 1024 bytes
-          },         
-          request: {
-            endpoint: 'server/handleUploads'
-          },
-          callbacks: {
-            onSubmit: function(id, fileName) {
+		var uploader = new qq.FineUploader({
+		  // Pass the HTML element here
+		  element: document.getElementById('fine-uploader'),
+		  multiple: false,
+		  validation: {
+		      allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
+		      sizeLimit: 51200000 //51200 // 50 kB = 50 * 1024 bytes
+		  },         
+		  request: {
+		    endpoint: 'server/handleUploads'
+		  },
+		  callbacks: {
+		    onSubmit: function(id, fileName) {
 
-//              fileCount ++;
-//              if(fileCount > fileLimit) {
-//                $('#filelimit-fine-uploader .qq-upload-button').hide();
-//                $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
-//                return false;
-//              }
+		//              fileCount ++;
+		//              if(fileCount > fileLimit) {
+		//                $('#filelimit-fine-uploader .qq-upload-button').hide();
+		//                $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
+		//                return false;
+		//              }
 
-            },
-            onCancel: function(id, fileName) {
-//              fileCount --;
-//              if(fileCount <= fileLimit) {
-//                $('#filelimit-fine-uploader .qq-upload-button').show();
-//              }
-            },
-            onComplete: function(id, fileName, responseJSON) {
+		    },
+		    onCancel: function(id, fileName) {
+		//              fileCount --;
+		//              if(fileCount <= fileLimit) {
+		//                $('#filelimit-fine-uploader .qq-upload-button').show();
+		//              }
+		    },
+		    onComplete: function(id, fileName, responseJSON) {
 
-              //if (responseJSON.success) {
-              //    $('#filelimit-fine-uploader .qq-upload-button').hide();
-              //    $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
-              //  }
-              //}
-            }
-          },
-              });
-      }
-    
-      new createUploader();
+		      //if (responseJSON.success) {
+		      //    $('#filelimit-fine-uploader .qq-upload-button').hide();
+		      //    $('#filelimit-fine-uploader .qq-upload-drop-area').hide();
+		      //  }
+		      //}
+		    }
+		  },
+		      });
+	}
+
+	new createUploader();
 	
 }
 
